@@ -14,10 +14,11 @@ const PHOTOS = [
 ];
 
 const MESSAGES = [
-  "To my dearest BFF Jerizza, you don't look a day over 18! Happy 31st Birthday!",
-  "Cheers to three decades of being absolutely incredible. You make the world brighter just by being in it.",
-  "May your day be filled with as much joy as you've brought into my life. Love you always!",
-  "Here's to more adventures, more laughs, and more memories. Happy Birthday, Bestie!"
+  "It's been 2 years of us being best friends, and honestly, I wouldn't trade it for anything. Through every moment, whenever I needed someone, you were always there, and I'm grateful I could be that person for you too. From our deep emotional talks to our happy memories, especially those hiking days, every moment with you means so much to me.",
+  "You've been my safe place, someone who listens without judging, someone who understands even the things I don't say out loud. I'm really lucky to have you in my life.",
+  "Please keep being the good and supportive person you are for your family. I see you. I know how much you've been struggling, even when you don't always show it. But despite everything, you still manage to lift others up with your motivation and your strength. That's something I truly admire about you. I can honestly say I'm proud of you for all your hard work and everything you continue to fight through.",
+  "On your special day, I'm wishing you a future that feels lighter, brighter, and full of the things you've been hoping for. You deserve peace, happiness, and all the good things life can give.",
+  "No matter where life takes us, I'll always be here for you, just like you've always been for me.",
 ];
 
 const FLOATING_ELEMENTS = [...Array(15)].map((_, i) => ({
@@ -129,8 +130,8 @@ export default function App() {
               <div className="h-px flex-1 bg-[#d4a373]/30" />
             </div>
             <h3 className="text-4xl font-light leading-tight">
-              Three Decades of <br />
-              <span className="italic text-[#8c7851]">Grace & Beauty</span>
+              Two Years of <br />
+              <span className="italic text-[#8c7851]">True Friendship</span>
             </h3>
             <div className="space-y-6 text-lg leading-relaxed text-[#6b6b6b]">
               {MESSAGES.map((msg, i) => (
@@ -202,24 +203,24 @@ export default function App() {
             className={`transition-all duration-700 ${finalInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
           >
             <Heart className="mx-auto mb-8 text-[#d4a373]" size={48} fill="currentColor" />
-            <h2 className="text-5xl md:text-7xl font-light mb-6">Happy Birthday, Jerizza!</h2>
+            <h2 className="text-5xl md:text-7xl font-light mb-6" aria-label="Happy Birthday, my best friend">Happy Birthday, my best friend <span aria-hidden="true">💛</span></h2>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              May this new chapter be your most beautiful one yet.
-              You deserve all the magic the world has to offer.
+              No matter where life takes us, I'll always be here for you,
+              just like you've always been for me.
             </p>
             <div className="mt-12 flex justify-center gap-8">
               <div className="text-center">
-                <span className="block text-3xl font-light">18</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Years Old</span>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <span className="block text-3xl font-light">31</span>
-                <span className="text-[10px] uppercase tracking-widest text-white/40">Real Years</span>
+                <span className="block text-3xl font-light">2</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40">Years</span>
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div className="text-center">
                 <span className="block text-3xl font-light">∞</span>
+                <span className="text-[10px] uppercase tracking-widest text-white/40">Memories</span>
+              </div>
+              <div className="w-px h-12 bg-white/20" />
+              <div className="text-center">
+                <span className="block text-3xl font-light">💛</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/40">Besties</span>
               </div>
             </div>

@@ -14,7 +14,7 @@ const PHOTOS = [
 ];
 
 const MESSAGES = [
-  "To my dearest BFF Jerizza, you don't look a day over 18! Happy 30th Birthday!",
+  "To my dearest BFF Jerizza, you don't look a day over 18! Happy 31st Birthday!",
   "Cheers to three decades of being absolutely incredible. You make the world brighter just by being in it.",
   "May your day be filled with as much joy as you've brought into my life. Love you always!",
   "Here's to more adventures, more laughs, and more memories. Happy Birthday, Bestie!"
@@ -80,12 +80,12 @@ export default function App() {
           <h1 className="text-7xl md:text-9xl font-light mb-2 relative inline-block">
             Happy 18th
             <div className="absolute -top-4 -right-12 bg-[#d4a373] text-white text-xs md:text-sm px-3 py-1 rounded-full shadow-lg font-sans font-bold anim-badge-spring">
-              (actually 30th)
+              (actually 31st)
             </div>
           </h1>
 
           <h2 className="text-4xl md:text-6xl font-light italic text-[#8c7851] mt-4">
-            Jerizza Ladaan
+            Jerizza Marie Lagdaan
           </h2>
 
           <p className="mt-8 text-lg text-[#a89078] max-w-md mx-auto leading-relaxed anim-fade-in-late">
@@ -214,7 +214,7 @@ export default function App() {
               </div>
               <div className="w-px h-12 bg-white/20" />
               <div className="text-center">
-                <span className="block text-3xl font-light">30</span>
+                <span className="block text-3xl font-light">31</span>
                 <span className="text-[10px] uppercase tracking-widest text-white/40">Real Years</span>
               </div>
               <div className="w-px h-12 bg-white/20" />

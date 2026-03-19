@@ -4,3 +4,75 @@
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
 }
+
+/* ── Hero entrance animations ─────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes badgeSpring {
+  0%   { opacity: 0; transform: scale(0) rotate(-10deg); }
+  60%  { transform: scale(1.15) rotate(14deg); }
+  100% { opacity: 1; transform: scale(1) rotate(12deg); }
+}
+
+/* ── Scroll indicator bounce ──────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);    }
+  50%       { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ── Floating background elements ────────────────────── */
+@keyframes floatUp {
+  from { transform: translateY(110vh) rotate(0deg);   }
+  to   { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* ── Confetti fall ────────────────────────────────────── */
+@keyframes confettiFall {
+  from {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) translateX(var(--x-offset, 0px)) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
+/* ── Utility animation classes ───────────────────────── */
+.anim-fade-up {
+  animation: fadeUp 1s ease-out both;
+}
+
+.anim-fade-in-delay {
+  animation: fadeIn 0.8s ease-out 0.5s both;
+}
+
+.anim-fade-in-late {
+  animation: fadeIn 0.8s ease-out 1.5s both;
+}
+
+.anim-badge-spring {
+  animation: badgeSpring 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.2s both;
+}
+
+.anim-bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.anim-float-up {
+  position: absolute;
+  bottom: -5%;
+  animation: floatUp linear infinite;
+}
+
+.anim-confetti-fall {
+  animation: confettiFall linear infinite;
+}

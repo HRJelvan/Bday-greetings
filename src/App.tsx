@@ -4,8 +4,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Heart, Stars, Gift, Cake, Camera, Music, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Heart, Stars, Cake, Sparkles } from 'lucide-react';
 
 const PHOTOS = [
   { url: 'https://picsum.photos/seed/jerizza1/800/1000', caption: 'Radiant as ever' },
@@ -20,6 +20,19 @@ const MESSAGES = [
   "May your day be filled with as much joy as you've brought into my life. Love you always!",
   "Here's to more adventures, more laughs, and more memories. Happy Birthday, Bestie!"
 ];
+
+const FLOATING_ELEMENTS = [...Array(15)].map((_, i) => ({
+  x: Math.random() * 100 + '%',
+  duration: Math.random() * 10 + 10,
+  delay: Math.random() * 10,
+}));
+
+const CONFETTI_PARTICLES = [...Array(50)].map((_, i) => ({
+  left: Math.random() * 100 + '%',
+  xOffset: (Math.random() - 0.5) * 200,
+  duration: Math.random() * 3 + 2,
+  delay: Math.random() * 5,
+}));
 
 export default function App() {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -76,12 +89,12 @@ export default function App() {
 
         {/* Floating Elements Background */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(15)].map((_, i) => (
+          {FLOATING_ELEMENTS.map((el, i) => (
             <motion.div
               key={i}
               className="absolute text-[#d4a373]/20"
               initial={{ 
-                x: Math.random() * 100 + "%", 
+                x: el.x, 
                 y: "110%",
                 rotate: 0 
               }}
@@ -90,10 +103,10 @@ export default function App() {
                 rotate: 360
               }}
               transition={{ 
-                duration: Math.random() * 10 + 10, 
+                duration: el.duration, 
                 repeat: Infinity,
                 ease: "linear",
-                delay: Math.random() * 10
+                delay: el.delay
               }}
             >
               {i % 3 === 0 ? <Heart size={24} /> : i % 3 === 1 ? <Stars size={24} /> : <Sparkles size={24} />}
@@ -244,25 +257,25 @@ export default function App() {
       {/* Confetti Overlay (Simple CSS implementation) */}
       {showConfetti && (
         <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
-          {[...Array(50)].map((_, i) => (
+          {CONFETTI_PARTICLES.map((particle, i) => (
             <motion.div
               key={i}
               className="absolute w-2 h-2 rounded-full"
               style={{
                 backgroundColor: ['#d4a373', '#8c7851', '#e9edc9', '#faedcd'][i % 4],
-                left: Math.random() * 100 + '%',
+                left: particle.left,
                 top: -10
               }}
               animate={{
                 y: [0, window.innerHeight + 100],
-                x: [0, (Math.random() - 0.5) * 200],
+                x: [0, particle.xOffset],
                 rotate: [0, 360]
               }}
               transition={{
-                duration: Math.random() * 3 + 2,
+                duration: particle.duration,
                 repeat: Infinity,
                 ease: "linear",
-                delay: Math.random() * 5
+                delay: particle.delay
               }}
             />
           ))}

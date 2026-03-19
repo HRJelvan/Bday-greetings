@@ -150,12 +150,13 @@ export default function App() {
             ref={photoRef}
             className={`relative transition-all duration-700 ${photoInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
           >
-            <div className="aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
+            <div className="aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-[#e9d8c4] via-[#d4a373] to-[#8c7851]">
               <img
                 src="https://picsum.photos/seed/jerizza_main/800/1000"
                 alt="Jerizza"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl max-w-[200px]">
@@ -180,12 +181,13 @@ export default function App() {
                 className={`group transition-all duration-500 hover:-translate-y-2 ${galleryInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: galleryInView ? `${i * 100}ms` : '0ms' }}
               >
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-4 shadow-lg">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden mb-4 shadow-lg bg-gradient-to-br from-[#e9d8c4] to-[#d4a373]">
                   <img
                     src={photo.url}
                     alt={photo.caption}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                   />
                 </div>
                 <p className="text-center text-sm italic text-[#a89078]">{photo.caption}</p>

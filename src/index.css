@@ -23,7 +23,7 @@
 }
 
 /* ── Scroll indicator bounce ──────────────────────────── */
-@keyframes bounce {
+@keyframes scrollBounce {
   0%, 100% { transform: translateX(-50%) translateY(0);    }
   50%       { transform: translateX(-50%) translateY(10px); }
 }
@@ -64,7 +64,7 @@
 }
 
 .anim-bounce {
-  animation: bounce 2s ease-in-out infinite;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
 .anim-float-up {
@@ -75,4 +75,26 @@
 
 .anim-confetti-fall {
   animation: confettiFall linear infinite;
+}
+
+/* ── Accessibility: respect reduced-motion preference ──── */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-fade-in-delay,
+  .anim-fade-in-late,
+  .anim-badge-spring {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .anim-bounce,
+  .anim-float-up {
+    animation: none;
+  }
+
+  .anim-confetti-fall {
+    animation: none;
+    display: none;
+  }
 }
